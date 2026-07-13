@@ -40,8 +40,8 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#idea">Why Cellosophy</a>
-          <a href="#field-notes">Field notes</a>
-          <a className="nav-cta" href="#subscribe">Join</a>
+          <a href="#about">Who we are</a>
+          <a className="nav-cta" href="#subscribe">Follow or join</a>
         </nav>
       </header>
 
@@ -50,11 +50,13 @@ export default function Home() {
           <p className="eyebrow">An inquiry into minds without brains</p>
           <h1>Do minds really need brains?</h1>
           <p className="dek">
-            Explore how living cells sense, decide, remember, and act.
+            Explore how living cells sense, decide, remember, and act—and what
+            their intelligence might teach us about building better AI.
           </p>
+          <p className="hero-context">A collaboration among cognitive scientists, computer scientists, microbiologists, and mathematicians.</p>
           <div className="hero-actions">
-            <a className="button primary" href="#idea">Provocation <span>→</span></a>
-            <a className="button secondary" href="#subscribe">Subscribe <span>↘</span></a>
+            <a className="button primary" href="#idea">Why CELLosophy <span>→</span></a>
+            <a className="button secondary" href="#subscribe">Follow or join <span>↘</span></a>
           </div>
           <p className="micro-manifesto">Cells sense <i>·</i> choose <i>·</i> adapt</p>
         </div>
@@ -100,11 +102,47 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="about-section" id="about">
+        <div className="about-heading">
+          <p className="section-number">03 / Who we are</p>
+          <div>
+            <h2>Different disciplines. One living question.</h2>
+            <p className="about-intro">
+              CELLosophy brings together cognitive scientists, computer
+              scientists, microbiologists, and mathematicians to think across
+              the usual boundaries between life, mind, and intelligence.
+            </p>
+          </div>
+        </div>
+        <div className="about-grid">
+          <article>
+            <span>01</span>
+            <h3>Origins of mind</h3>
+            <p>We want to understand how sensing, memory, choice, and agency could arise before brains and nervous systems.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>The lives of cells</h3>
+            <p>Unicellular creatures are not merely machinery. They are active beings navigating uncertain worlds—and they may hold clues to the beginnings of mind and life.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Better artificial intelligence</h3>
+            <p>By learning how living systems adapt and solve problems without brains, we hope to imagine AI that is more flexible, resourceful, and responsive to its world.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="subscribe-section" id="subscribe">
         <div>
-          <p className="section-number">03 / Keep wondering</p>
-          <h2>Stay curious about life.</h2>
-          <p>Essays, field notes, and cellular surprises delivered regularly.</p>
+          <p className="section-number">04 / Follow or join</p>
+          <h2>Come along for the inquiry.</h2>
+          <p>
+            Subscribe to our Substack for essays, field notes, experiments,
+            and conversations as CELLosophy takes shape. If these questions
+            meet your own work, reply to a note and introduce yourself—we
+            would be delighted to hear from potential collaborators.
+          </p>
         </div>
         <div className="substack-signup">
           <iframe
@@ -115,11 +153,11 @@ export default function Home() {
             frameBorder="0"
             scrolling="no"
           />
-          <p>No noise. Just careful provocations from the cellular world.</p>
+          <p>Follow the journey. Join the conversation. Perhaps help shape what comes next.</p>
         </div>
       </section>
 
-      <footer><span>CELLosophy</span><p>Minds without brains · Questions without borders</p><a href="#top">Back to the cell ↑</a></footer>
+      <footer><span>CELLosophy</span><p>Cognitive science · Computer science · Microbiology · Mathematics</p><a href="#top">Back to the cell ↑</a></footer>
     </main>
   );
 }

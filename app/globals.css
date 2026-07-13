@@ -26,6 +26,7 @@ nav a:not(.nav-cta):hover { border-color:var(--rust); }
 h1, h2, h3, p { margin-top:0; }
 h1 { font-size:clamp(3.25rem,6vw,6.8rem); line-height:.91; letter-spacing:-.07em; max-width:800px; margin-bottom:2.2rem; font-weight:900; }
 .dek { font-size:clamp(1.1rem,1.65vw,1.55rem); line-height:1.4; max-width:650px; margin-bottom:2rem; }
+.hero-context { max-width:650px; margin:-.5rem 0 2rem; color:var(--moss); font-size:.9rem; font-weight:700; line-height:1.55; }
 .hero-actions { display:flex; gap:1rem; width:100%; }
 .button { min-height:64px; padding:0 1.7rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; border:2px solid; font-weight:800; }
 .button span { font-size:1.6rem; transition:transform .2s ease; }
@@ -51,10 +52,10 @@ h1 { font-size:clamp(3.25rem,6vw,6.8rem); line-height:.91; letter-spacing:-.07em
 .fact-card p { font-size:.8rem; line-height:1.45; margin:0; }
 .field-prompt { position:absolute; left:5%; bottom:5%; color:var(--moss); font:700 .7rem ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.13em; text-transform:uppercase; }
 
-.idea-section, .notes-section, .subscribe-section { padding:clamp(5rem,10vw,9rem) 5vw; }
+.idea-section, .notes-section, .about-section, .subscribe-section { padding:clamp(5rem,10vw,9rem) 5vw; }
 .section-number { text-transform:uppercase; letter-spacing:.18em; font:700 .72rem ui-monospace, SFMono-Regular, Menlo, monospace; color:var(--rust); }
 .idea-section { background:var(--cream); display:grid; grid-template-columns:1fr 2.7fr 1.3fr; gap:5vw; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
-.idea-section h2, .notes-heading h2, .subscribe-section h2 { font-size:clamp(2.5rem,5.1vw,5.8rem); line-height:.98; letter-spacing:-.055em; }
+.idea-section h2, .notes-heading h2, .about-heading h2, .subscribe-section h2 { font-size:clamp(2.5rem,5.1vw,5.8rem); line-height:.98; letter-spacing:-.055em; }
 .idea-section > div > p { font-size:1.25rem; line-height:1.65; max-width:780px; }
 blockquote { margin:0; align-self:end; padding:1.5rem; border:2px solid var(--cobalt); color:var(--cobalt); font:italic 1.25rem/1.45 Georgia, serif; transform:rotate(1.5deg); background:var(--celadon); }
 .notes-section { background:var(--cobalt); color:white; }
@@ -68,6 +69,18 @@ blockquote { margin:0; align-self:end; padding:1.5rem; border:2px solid var(--co
 .notes-grid span { color:#ffb08a; font:700 .75rem ui-monospace,monospace; text-transform:uppercase; letter-spacing:.18em; }
 .notes-grid h3 { font-size:1.65rem; margin:1.5rem 0 1rem; }
 .notes-grid p { line-height:1.65; color:rgba(255,255,255,.8); }
+
+.about-section { background:var(--celadon); border-bottom:1px solid var(--ink); }
+.about-heading { display:grid; grid-template-columns:1fr 3fr; gap:5vw; align-items:start; }
+.about-heading h2 { max-width:1000px; margin-bottom:2rem; }
+.about-intro { max-width:900px; font-size:clamp(1.15rem,1.7vw,1.5rem); line-height:1.6; }
+.about-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:5rem; }
+.about-grid article { min-height:300px; padding:2rem; background:var(--cream); border:1px solid var(--ink); border-top:7px solid var(--rust); box-shadow:8px 8px 0 rgba(25,71,209,.12); }
+.about-grid article:nth-child(2) { border-top-color:var(--cobalt); }
+.about-grid article:nth-child(3) { border-top-color:var(--moss); }
+.about-grid span { color:var(--rust); font:800 .75rem ui-monospace,monospace; letter-spacing:.18em; }
+.about-grid h3 { margin:2.5rem 0 1rem; font-size:1.65rem; }
+.about-grid p { margin:0; line-height:1.65; color:var(--moss); }
 
 .subscribe-section { display:grid; grid-template-columns:1.2fr 1fr; gap:8vw; align-items:end; }
 .subscribe-section h2 { margin:1.4rem 0; }
@@ -83,16 +96,17 @@ footer a { color:#ffb08a; }
 @media (max-width:900px) {
   .site-header { height:80px; } nav a:not(.nav-cta) { display:none; }
   .hero { grid-template-columns:1fr; } .hero-copy { border-right:0; border-bottom:3px dotted var(--cobalt); min-height:calc(100svh - 80px); }
-  .hero-field { min-height:680px; } .idea-section, .notes-heading, .subscribe-section { grid-template-columns:1fr; }
+  .hero-field { min-height:680px; } .idea-section, .notes-heading, .about-heading, .subscribe-section { grid-template-columns:1fr; }
   .idea-section { gap:2.5rem; } blockquote { max-width:500px; } .notes-grid { grid-template-columns:1fr; }
   .notes-grid article, .notes-grid article + article { padding:2rem 0; border-right:0; border-bottom:1px solid rgba(255,255,255,.4); }
+  .about-grid { grid-template-columns:1fr; } .about-grid article { min-height:0; }
 }
 @media (max-width:600px) {
   .site-header { padding:0 1.25rem; } .wordmark { gap:.55rem; font-size:2rem; } .brand-logo { width:3rem; height:3rem; } .nav-cta { padding:.8rem 1rem; }
   .hero-copy { padding:3rem 1.25rem 2rem; } h1 { font-size:3.5rem; } .hero-actions { flex-direction:column; }
   .hero-field { min-height:560px; } .specimen { font-size:.68rem; } .specimen-bacteria { top:20%; } .specimen-stentor { top:38%; }
   .specimen-physarum { left:18%; bottom:20%; } .fact-card { width:90%; right:5%; bottom:3%; } .field-prompt { display:none; }
-  .idea-section, .notes-section, .subscribe-section { padding:5rem 1.25rem; } .notes-heading h2, .idea-section h2, .subscribe-section h2 { font-size:2.8rem; }
+  .idea-section, .notes-section, .about-section, .subscribe-section { padding:5rem 1.25rem; } .notes-heading h2, .idea-section h2, .about-heading h2, .subscribe-section h2 { font-size:2.8rem; }
   .substack-signup iframe { height:320px; }
   footer { flex-direction:column; align-items:flex-start; }
 }

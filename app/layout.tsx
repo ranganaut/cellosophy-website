@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cellosophy.epistry.org"),
   title: "Cellosophy",
-  description: "Explore how living cells sense, decide, remember, and act.",
+  description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
   alternates: {
     canonical: "/",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Cellosophy",
     title: "Cellosophy — Minds Without Brains",
-    description: "Explore how living cells sense, decide, remember, and act.",
+    description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
     images: [
       {
         url: "/cellosophy-social-card.png",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cellosophy — Minds Without Brains",
-    description: "Explore how living cells sense, decide, remember, and act.",
+    description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
     images: ["/cellosophy-social-card.png"],
   },
   other: {
