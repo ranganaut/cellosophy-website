@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Starter Project",
-  description: "A clean starting point for building your site.",
+  title: "Cellosophy",
+  description: "You Don't Need a Brain to Have a Mind",
   other: {
     "codex-preview": "development",
   },
