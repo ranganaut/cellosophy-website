@@ -9,8 +9,10 @@ button, input { font:inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 
 .site-header { height:96px; padding:0 3.5vw; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(23,32,29,.18); position:relative; z-index:10; }
-.wordmark { font-size:clamp(2rem,4vw,4rem); font-weight:800; letter-spacing:-.065em; }
-.wordmark span { font-weight:950; }
+.wordmark { display:flex; align-items:center; gap:clamp(.65rem,1.2vw,1.15rem); font-size:clamp(2rem,4vw,4rem); font-weight:800; letter-spacing:-.065em; }
+.brand-logo { width:clamp(3.5rem,5.3vw,4.6rem); height:clamp(3.5rem,5.3vw,4.6rem); object-fit:contain; flex:none; mix-blend-mode:multiply; }
+.wordmark-text { white-space:nowrap; }
+.wordmark-text strong { font-weight:950; }
 nav { display:flex; align-items:center; gap:clamp(1.5rem,4vw,5rem); text-transform:uppercase; font-weight:800; letter-spacing:.08em; font-size:.82rem; }
 nav a:not(.nav-cta) { border-bottom:2px solid transparent; padding:.75rem 0; }
 nav a:not(.nav-cta):hover { border-color:var(--rust); }
@@ -86,7 +88,7 @@ footer a { color:#ffb08a; }
   .notes-grid article, .notes-grid article + article { padding:2rem 0; border-right:0; border-bottom:1px solid rgba(255,255,255,.4); }
 }
 @media (max-width:600px) {
-  .site-header { padding:0 1.25rem; } .wordmark { font-size:2rem; } .nav-cta { padding:.8rem 1rem; }
+  .site-header { padding:0 1.25rem; } .wordmark { gap:.55rem; font-size:2rem; } .brand-logo { width:3rem; height:3rem; } .nav-cta { padding:.8rem 1rem; }
   .hero-copy { padding:3rem 1.25rem 2rem; } h1 { font-size:3.5rem; } .hero-actions { flex-direction:column; }
   .hero-field { min-height:560px; } .specimen { font-size:.68rem; } .specimen-bacteria { top:20%; } .specimen-stentor { top:38%; }
   .specimen-physarum { left:18%; bottom:20%; } .fact-card { width:90%; right:5%; bottom:3%; } .field-prompt { display:none; }

@@ -29,7 +29,14 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Cellosophy home">
-          <span>CELL</span>osophy
+          <img
+            className="brand-logo"
+            src="/cellosophy-logo.png"
+            alt=""
+            width="1254"
+            height="1254"
+          />
+          <span className="wordmark-text"><strong>CELL</strong>osophy</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#idea">Why Cellosophy</a>

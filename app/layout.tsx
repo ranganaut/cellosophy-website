@@ -45,8 +45,9 @@ export const metadata: Metadata = {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/cellosophy-logo.png", type: "image/png" }],
+    shortcut: "/cellosophy-logo.png",
+    apple: "/cellosophy-logo.png",
   },
 };
 
