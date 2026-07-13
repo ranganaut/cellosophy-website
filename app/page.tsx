@@ -33,8 +33,8 @@ export default function Home() {
             className="brand-logo"
             src="/cellosophy-logo.png"
             alt=""
-            width="1254"
-            height="1254"
+            width="860"
+            height="860"
           />
           <span className="wordmark-text"><strong>CELL</strong>osophy</span>
         </a>
