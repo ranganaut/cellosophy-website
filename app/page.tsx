@@ -50,8 +50,9 @@ export default function Home() {
           <p className="eyebrow">An inquiry into minds without brains</p>
           <h1>Do minds really need brains?</h1>
           <p className="dek">
-            Explore how living cells sense, decide, remember, and act—and what
-            their intelligence might teach us about building better AI.
+            We are exploring how living cells sense, decide, remember, and act
+            - and what their intelligence might teach us about building better
+            AI.
           </p>
           <p className="hero-context">A collaboration among cognitive scientists, computer scientists, microbiologists, and mathematicians.</p>
           <div className="hero-actions">
