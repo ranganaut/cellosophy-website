@@ -47,7 +47,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">An inquiry into minds without brains</p>
+          <p className="eyebrow">An inquiry into microbial cognition</p>
           <h1>Do minds really need brains?</h1>
           <p className="dek">
             We are exploring how living cells sense, decide, remember, and act
