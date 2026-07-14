@@ -102,7 +102,11 @@ footer a { color:#ffb08a; }
   .about-grid { grid-template-columns:1fr; } .about-grid article { min-height:0; }
 }
 @media (max-width:600px) {
-  .site-header { padding:0 1.25rem; } .wordmark { gap:.55rem; font-size:2rem; } .brand-logo { width:3rem; height:3rem; } .nav-cta { padding:.8rem 1rem; }
+  .site-header { height:72px; padding:0 clamp(.75rem,4vw,1.25rem); gap:.5rem; }
+  .wordmark { min-width:0; gap:clamp(.35rem,1.8vw,.55rem); font-size:clamp(1.22rem,6vw,1.55rem); }
+  .brand-logo { width:clamp(2rem,11vw,2.5rem); height:clamp(2rem,11vw,2.5rem); }
+  nav { flex:none; }
+  .nav-cta { padding:.7rem clamp(.55rem,2.5vw,.85rem); white-space:nowrap; font-size:clamp(.58rem,2.5vw,.72rem); letter-spacing:.055em; }
   .hero-copy { padding:3rem 1.25rem 2rem; } h1 { font-size:3.5rem; } .hero-actions { flex-direction:column; }
   .hero-field { min-height:560px; } .specimen { font-size:.68rem; } .specimen-bacteria { top:20%; } .specimen-stentor { top:38%; }
   .specimen-physarum { left:18%; bottom:20%; } .fact-card { width:90%; right:5%; bottom:3%; } .field-prompt { display:none; }
