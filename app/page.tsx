@@ -107,7 +107,7 @@ export default function Home() {
         <div className="about-heading">
           <p className="section-number">03 / Who we are</p>
           <div>
-            <h2>Different disciplines. One living question.</h2>
+            <h2>Different disciplines. One pursuit.</h2>
             <p className="about-intro">
               CELLosophy brings together cognitive scientists, computer
               scientists, microbiologists, and mathematicians to think across
