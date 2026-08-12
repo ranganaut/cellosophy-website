@@ -63,6 +63,8 @@ blockquote { margin:0; align-self:end; padding:1.5rem; border:2px solid var(--co
 .notes-heading .section-number { color:#ffb08a; }
 .notes-heading h2 { max-width:1000px; }
 .essence-statement { margin:5rem 0 0 25%; max-width:920px; font-size:clamp(1.2rem,2vw,1.65rem); line-height:1.65; color:rgba(255,255,255,.88); }
+.essence-statement p { margin:0; }
+.essence-statement p + p { margin-top:1.5rem; }
 .notes-grid { margin-top:5rem; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(255,255,255,.45); }
 .notes-grid article { padding:2.5rem 2.5rem 1rem 0; border-right:1px solid rgba(255,255,255,.45); }
 .notes-grid article + article { padding-left:2.5rem; }

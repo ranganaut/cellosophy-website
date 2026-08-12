@@ -97,9 +97,12 @@ export default function Home() {
           <p className="section-number">02 / Vision</p>
           <h2>The Essence of Cellosophy</h2>
         </div>
-        <p className="essence-statement">
-          Cellosophy is an evolving inquiry into cognition that begins where most accounts of mind do not: with the living cell. Its central question—do you need a brain to have a mind?—opens a bottom-up investigation of how autonomous organisms sense, evaluate, remember, regulate, and act in changing environments. The project treats cognition broadly and carefully. It does not claim that bacteria think like humans, or that every biological process is intelligent. Instead, it asks what kinds of problem-solving, agency, and meaning-making are already present in the basic work of staying alive. Established biology provides the ground; philosophical interpretation, synthetic biology, and new experiments help extend the view. Bacterial chemotaxis, especially in E. coli, offers a flagship example: receptors detect change, signaling networks integrate information, methylation provides a memory-like baseline, and flagellar motors turn evaluation into movement. Cellosophy connects these mechanisms to larger conversations in basal cognition, enactivism, cybernetics, biosemiotics, and embodied intelligence while keeping their differences visible. It is both a research program and a public commons for curious minds—one that brings rigorous science, imaginative questions, and collaborative discovery together, from molecular mechanisms to the broader possibilities of life. That shift makes ordinary life newly strange, intelligible, and worthy of attention.
-        </p>
+        <div className="essence-statement">
+          <p>Cellosophy is an inquiry into cognition that begins with the living cell. Its central question - do you need a brain to have a mind?-opens a bottom-up investigation of how autonomous organisms sense, evaluate, remember, regulate, and act in changing environments.</p>
+          <p>We treat cognition broadly and carefully. Neither do we claim that bacteria think like humans, nor that every biological process is intelligent. Instead, we ask what kinds of problem-solving, agency, and meaning-making are already present in the basic work of staying alive.</p>
+          <p>Bacterial chemotaxis, especially in E. coli, offers a flagship example: receptors detect change, signaling networks integrate information, methylation provides a memory-like baseline, and flagellar motors turn valuation into movement.</p>
+          <p>We are exploring the connection between these concrete biochemical mechanisms and larger debates on basal cognition, enactivism, cybernetics, biosemiotics, and embodied intelligence. By its very nature, cellosophy is both a research program and a public commons for curious minds; one that brings rigorous science, imaginative questions, and collaborative discovery together.</p>
+        </div>
       </section>
 
       <section className="about-section" id="about">
