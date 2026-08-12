@@ -40,6 +40,7 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#idea">Why Cellosophy</a>
+          <a href="#vision">Vision</a>
           <a href="#about">Who we are</a>
           <a className="nav-cta" href="#subscribe">Follow or join</a>
         </nav>
@@ -91,16 +92,14 @@ export default function Home() {
         <blockquote>“Not little humans in little cells—but life solving the problem of what to do next.”</blockquote>
       </section>
 
-      <section className="notes-section" id="field-notes">
+      <section className="notes-section" id="vision">
         <div className="notes-heading">
-          <p className="section-number">02 / Field notes</p>
-          <h2>Three ways cells make sense of their world</h2>
+          <p className="section-number">02 / Vision</p>
+          <h2>The Essence of Cellosophy</h2>
         </div>
-        <div className="notes-grid">
-          <article><span>Sense</span><h3>Notice what matters</h3><p>Cells distinguish nutrients from toxins, light from darkness, safety from danger, and self from other.</p></article>
-          <article><span>Decide</span><h3>Choose what happens next</h3><p>Faced with competing signals, cells integrate information, change strategies, and commit to a course of action.</p></article>
-          <article><span>Remember</span><h3>Let the past shape the future</h3><p>Through habituation and biological memory, earlier encounters alter how a cell responds the next time.</p></article>
-        </div>
+        <p className="essence-statement">
+          Cellosophy is an evolving inquiry into cognition that begins where most accounts of mind do not: with the living cell. Its central question—do you need a brain to have a mind?—opens a bottom-up investigation of how autonomous organisms sense, evaluate, remember, regulate, and act in changing environments. The project treats cognition broadly and carefully. It does not claim that bacteria think like humans, or that every biological process is intelligent. Instead, it asks what kinds of problem-solving, agency, and meaning-making are already present in the basic work of staying alive. Established biology provides the ground; philosophical interpretation, synthetic biology, and new experiments help extend the view. Bacterial chemotaxis, especially in E. coli, offers a flagship example: receptors detect change, signaling networks integrate information, methylation provides a memory-like baseline, and flagellar motors turn evaluation into movement. Cellosophy connects these mechanisms to larger conversations in basal cognition, enactivism, cybernetics, biosemiotics, and embodied intelligence while keeping their differences visible. It is both a research program and a public commons for curious minds—one that brings rigorous science, imaginative questions, and collaborative discovery together, from molecular mechanisms to the broader possibilities of life. That shift makes ordinary life newly strange, intelligible, and worthy of attention.
+        </p>
       </section>
 
       <section className="about-section" id="about">
@@ -139,7 +138,7 @@ export default function Home() {
           <p className="section-number">04 / Follow or join</p>
           <h2>Come along for the inquiry.</h2>
           <p>
-            Subscribe to our Substack for essays, field notes, experiments,
+            Subscribe to our Substack for essays, observations, experiments,
             and conversations as CELLosophy takes shape. If these questions
             meet your own work, reply to a note and introduce yourself—we
             would be delighted to hear from potential collaborators.
