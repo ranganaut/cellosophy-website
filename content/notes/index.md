@@ -16,10 +16,7 @@ The notes may become a **Journal Club**, a library of cleaned-up **conversation 
 
 ## Ways into the notes
 
-- **Journal Club** — commentary on papers and books.
-- **Conversations** — cleaned-up transcripts of recorded calls.
-- **Concepts** — interconnected notes on important topics.
-- **Textbook** — a slowly assembling introduction to Cellosophy.
-
-> [!tip] A living knowledge base
-> Notes marked `publish: true` are public. Drafts remain in the vault until a human designates them for publication.
+- **Journal Club** - commentary on papers and books.
+- **Conversations** - cleaned-up transcripts of recorded calls.
+- **Concepts** - interconnected notes on important topics.
+- **Textbook** - a slowly assembling introduction to Cellosophy.
