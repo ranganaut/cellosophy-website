@@ -48,6 +48,7 @@ export default function Home() {
           <p className="hero-context">{text(hero, "context")}</p>
           <div className="hero-actions">
             <a className="button primary" href={text(hero, "primaryHref")}>{text(hero, "primaryLabel")} <span>{text(hero, "primaryArrow")}</span></a>
+            <a className="button secondary" href={text(hero, "notesHref")}>{text(hero, "notesLabel")} <span>{text(hero, "notesArrow")}</span></a>
             <a className="button secondary" href={text(hero, "secondaryHref")}>{text(hero, "secondaryLabel")} <span>{text(hero, "secondaryArrow")}</span></a>
           </div>
           <p className="micro-manifesto">{text(hero, "manifesto")}</p>
