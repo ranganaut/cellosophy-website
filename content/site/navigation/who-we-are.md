@@ -4,5 +4,5 @@ type: navigation
 publish: true
 label: Who we are
 href: "#about"
-order: 3
+order: 4
 ---

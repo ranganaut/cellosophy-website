@@ -112,6 +112,27 @@ The build regenerates `app/content.generated.ts` from the vault before compiling
 the site. Layout, CSS, and interaction remain in the application code. Notes are
 published only when their frontmatter explicitly contains `publish: true`.
 
+### Public notes
+
+The public notebook lives at `/notes`. Markdown files under `content/notes/` are
+available there only when they contain `publish: true` in frontmatter. The notes
+surface currently renders headings, emphasis, lists, tables, code blocks,
+Obsidian wikilinks, aliases, note embeds, callouts, tags, backlinks, and common
+GitHub-flavored Markdown features. Tags become browseable filters such as
+`/notes?tag=concept`.
+
+Obsidian Canvas files are also supported. Put a `.canvas` file in
+`content/notes/` and create an optional sidecar with the same name plus
+`.meta.md`, for example `concept-map.canvas.meta.md`. The sidecar uses the same
+frontmatter as a note; publishing is opt-in, so add `publish: true` there when
+the canvas is ready. Canvas text nodes render as Markdown, file nodes link to
+published notes when possible, and edges and groups are preserved in a
+scrollable canvas view.
+
+The vault is intentionally a public-safe export boundary: private drafts,
+attachments, and Obsidian workspace configuration are not published unless a
+human explicitly designates the corresponding content for publication.
+
 The timeout defaults can be overridden for a controlled canary with `SITES_INSTALL_TIMEOUT`, `SITES_INSTALL_KILL_AFTER`, `SITES_BUILD_TIMEOUT`, and `SITES_BUILD_KILL_AFTER`. A timeout fails the command; the helpers never retry an unchanged install or build.
 
 ## Learn More

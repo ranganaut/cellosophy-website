@@ -1,6 +1,9 @@
 // Generated from the Obsidian-compatible content vault by scripts/generate-content.mjs.
-export type ContentValue = string | number | boolean;
-export type ContentNote = { id: string; path: string; data: Record<string, ContentValue>; body: string; paragraphs: string[] };
+export type ContentValue = string | number | boolean | string[];
+export type CanvasNode = { id: string; type: string; x?: number; y?: number; width?: number; height?: number; text?: string; file?: string; url?: string; color?: string; label?: string; subpath?: string };
+export type CanvasEdge = { id: string; fromNode: string; toNode: string; fromSide?: string; toSide?: string; label?: string };
+export type CanvasDocument = { nodes?: CanvasNode[]; edges?: CanvasEdge[] };
+export type ContentNote = { id: string; path: string; data: Record<string, ContentValue>; body: string; paragraphs: string[]; canvas?: CanvasDocument };
 export const contentNotes: ContentNote[] = [
   {
     "id": "about/better-ai",
@@ -56,8 +59,22 @@ export const contentNotes: ContentNote[] = [
       "publish": true,
       "label": "Follow or join",
       "href": "#subscribe",
-      "order": 4,
+      "order": 5,
       "cta": true
+    },
+    "body": "",
+    "paragraphs": []
+  },
+  {
+    "id": "navigation/notes",
+    "path": "site/navigation/notes.md",
+    "data": {
+      "id": "navigation/notes",
+      "type": "navigation",
+      "publish": true,
+      "label": "Notes",
+      "href": "/notes",
+      "order": 3
     },
     "body": "",
     "paragraphs": []
@@ -85,7 +102,7 @@ export const contentNotes: ContentNote[] = [
       "publish": true,
       "label": "Who we are",
       "href": "#about",
-      "order": 3
+      "order": 4
     },
     "body": "",
     "paragraphs": []
@@ -103,6 +120,85 @@ export const contentNotes: ContentNote[] = [
     },
     "body": "",
     "paragraphs": []
+  },
+  {
+    "id": "notes/biological-agency",
+    "path": "notes/biological-agency.md",
+    "data": {
+      "id": "notes/biological-agency",
+      "type": "note",
+      "kind": "concept",
+      "publish": true,
+      "title": "Biological agency",
+      "description": "A working concept for understanding how living systems regulate themselves and act in a changing world.",
+      "tags": [
+        "concept",
+        "agency",
+        "philosophy"
+      ],
+      "aliases": [
+        "Agency in living systems"
+      ]
+    },
+    "body": "# Biological agency\n\nBiological agency names the capacity of a living system to maintain itself, respond selectively to conditions, and pursue states that preserve its organization. It does not require a nervous system or a human-like inner life.\n\n> [!question] Open question\n> How should we distinguish agency from the useful but overly broad habit of describing every regulated biological process as intelligent?\n\nThis note is part of the emerging conceptual vocabulary of [[The Cellosophy Notes]].",
+    "paragraphs": [
+      "# Biological agency",
+      "Biological agency names the capacity of a living system to maintain itself, respond selectively to conditions, and pursue states that preserve its organization. It does not require a nervous system or a human-like inner life.",
+      "> [!question] Open question\n> How should we distinguish agency from the useful but overly broad habit of describing every regulated biological process as intelligent?",
+      "This note is part of the emerging conceptual vocabulary of [[The Cellosophy Notes]]."
+    ]
+  },
+  {
+    "id": "notes/chemotaxis",
+    "path": "notes/chemotaxis.md",
+    "data": {
+      "id": "notes/chemotaxis",
+      "type": "note",
+      "kind": "concept",
+      "publish": true,
+      "title": "Chemotaxis",
+      "description": "A flagship model for studying sensing, memory-like adaptation, valuation, and action in a single cell.",
+      "tags": [
+        "concept",
+        "biology",
+        "cognition"
+      ],
+      "aliases": [
+        "Bacterial chemotaxis"
+      ]
+    },
+    "body": "# Chemotaxis\n\nChemotaxis is the movement of an organism in response to chemical signals. In *E. coli*, receptors detect changes in the environment, signaling networks integrate those changes, and the flagellar motor turns the result into movement.\n\n> [!note] Why it matters to CELLosophy\n> The cell does not need to measure a spatial gradient all at once. It compares present conditions with its recent past, making the methylation system a functional analogue of short-term memory.\n\nSee also: [[Biological agency]]",
+    "paragraphs": [
+      "# Chemotaxis",
+      "Chemotaxis is the movement of an organism in response to chemical signals. In *E. coli*, receptors detect changes in the environment, signaling networks integrate those changes, and the flagellar motor turns the result into movement.",
+      "> [!note] Why it matters to CELLosophy\n> The cell does not need to measure a spatial gradient all at once. It compares present conditions with its recent past, making the methylation system a functional analogue of short-term memory.",
+      "See also: [[Biological agency]]"
+    ]
+  },
+  {
+    "id": "notes/index",
+    "path": "notes/index.md",
+    "data": {
+      "id": "notes/index",
+      "type": "note",
+      "kind": "index",
+      "publish": true,
+      "title": "The Cellosophy Notes",
+      "description": "An evolving public notebook for the study of cognition, agency, and intelligence in living cells.",
+      "tags": [
+        "index",
+        "cellosophy"
+      ]
+    },
+    "body": "# The Cellosophy Notes\n\nThis is the public notebook of CELLosophy: an evolving record of questions, conversations, readings, experiments, and concepts gathered around cognition in living systems.\n\nThe notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[Biological agency]], or a **textbook in progress**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention.\n\n## Ways into the notes\n\n- **Journal Club** — commentary on papers and books.\n- **Conversations** — cleaned-up transcripts of recorded calls.\n- **Concepts** — interconnected notes on important topics.\n- **Textbook** — a slowly assembling introduction to Cellosophy.\n\n> [!tip] A living knowledge base\n> Notes marked `publish: true` are public. Drafts remain in the vault until a human designates them for publication.",
+    "paragraphs": [
+      "# The Cellosophy Notes",
+      "This is the public notebook of CELLosophy: an evolving record of questions, conversations, readings, experiments, and concepts gathered around cognition in living systems.",
+      "The notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[Biological agency]], or a **textbook in progress**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention.",
+      "## Ways into the notes",
+      "- **Journal Club** — commentary on papers and books.\n- **Conversations** — cleaned-up transcripts of recorded calls.\n- **Concepts** — interconnected notes on important topics.\n- **Textbook** — a slowly assembling introduction to Cellosophy.",
+      "> [!tip] A living knowledge base\n> Notes marked `publish: true` are public. Drafts remain in the vault until a human designates them for publication."
+    ]
   },
   {
     "id": "organism/bacteria",

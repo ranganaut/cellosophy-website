@@ -51,6 +51,11 @@ For editorial changes, open the repository's `content/` directory as an Obsidian
 vault. Edit the Markdown notes, commit the changes to GitHub, and Cloudflare
 will regenerate the content manifest and publish the new version automatically.
 
+The public notebook is available at `/notes`. Notes under `content/notes/` are
+private by default and appear publicly only when a human adds
+`publish: true` to their frontmatter. See the repository README for the
+supported Obsidian Markdown and Canvas features.
+
 For layout, styling, or behavior changes, edit the application source outside
 the vault. The vault controls the words; the application controls presentation
 and interaction.
