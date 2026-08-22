@@ -110,7 +110,7 @@ headings, organism facts, subscription copy, footer text, and site metadata.
 
 The build regenerates `app/content.generated.ts` from the vault before compiling
 the site. Layout, CSS, and interaction remain in the application code. Notes are
-published unless their frontmatter contains `publish: false`.
+published only when their frontmatter explicitly contains `publish: true`.
 
 The timeout defaults can be overridden for a controlled canary with `SITES_INSTALL_TIMEOUT`, `SITES_INSTALL_KILL_AFTER`, `SITES_BUILD_TIMEOUT`, and `SITES_BUILD_KILL_AFTER`. A timeout fails the command; the helpers never retry an unchanged install or build.
 

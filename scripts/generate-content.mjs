@@ -48,6 +48,7 @@ function parseNote(source, filePath) {
   }
 
   const trimmedBody = body.trim();
+  if (!("publish" in data)) data.publish = false;
   return {
     id: String(data.id ?? path.relative(contentRoot, filePath).replace(/\.md$/, "")),
     path: path.relative(contentRoot, filePath).replaceAll(path.sep, "/"),
