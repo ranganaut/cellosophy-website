@@ -1,34 +1,27 @@
 "use client";
 
 import { useState } from "react";
+import { getContentNote, getContentNotes, text } from "./content";
 
-const organisms = {
-  bacteria: {
-    name: "Bacteria",
-    kicker: "Sense",
-    fact: "A bacterium can read chemical gradients and continually revise where it swims—without a neuron in sight.",
-  },
-  stentor: {
-    name: "Stentor roeseli",
-    kicker: "Choose",
-    fact: "This single cell tries different responses to irritation, changing tactics when the first one fails.",
-  },
-  physarum: {
-    name: "Physarum",
-    kicker: "Remember",
-    fact: "A brainless slime mold can solve spatial problems and retain traces of where it has already been.",
-  },
-} as const;
-
-type Organism = keyof typeof organisms;
+const header = getContentNote("site/header");
+const hero = getContentNote("site/hero");
+const idea = getContentNote("site/why-cellosophy");
+const vision = getContentNote("site/vision");
+const about = getContentNote("site/about");
+const subscribe = getContentNote("site/subscribe");
+const footer = getContentNote("site/footer");
+const navItems = getContentNotes("navigation");
+const organisms = getContentNotes("organism");
+const aboutCards = getContentNotes("about-card");
 
 export default function Home() {
-  const [active, setActive] = useState<Organism>("stentor");
+  const [activeKey, setActiveKey] = useState("stentor");
+  const activeOrganism = organisms.find((organism) => text(organism, "key") === activeKey) ?? organisms[0];
 
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Cellosophy home">
+        <a className="wordmark" href="#top" aria-label={text(header, "homeLabel")}>
           <img
             className="brand-logo"
             src="/cellosophy-logo.png"
@@ -36,72 +29,67 @@ export default function Home() {
             width="860"
             height="860"
           />
-          <span className="wordmark-text"><strong>CELL</strong>osophy</span>
+          <span className="wordmark-text"><strong>{text(header, "wordmark").slice(0, 4)}</strong>{text(header, "wordmark").slice(4)}</span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#idea">Why Cellosophy</a>
-          <a href="#vision">Vision</a>
-          <a href="#about">Who we are</a>
-          <a className="nav-cta" href="#subscribe">Follow or join</a>
+        <nav aria-label={text(header, "navigationLabel")}>
+          {navItems.map((item) => (
+            <a key={item.id} className={item.data.cta === true ? "nav-cta" : undefined} href={text(item, "href")}>
+              {text(item, "label")}
+            </a>
+          ))}
         </nav>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">An inquiry into microbial cognition</p>
-          <h1>Do minds really need brains?</h1>
-          <p className="dek">
-            We are exploring how living cells sense, decide, remember, and act
-            - and what their intelligence might teach us about building better
-            AI.
-          </p>
-          <p className="hero-context">A collaboration among cognitive scientists, computer scientists, microbiologists, and mathematicians.</p>
+          <p className="eyebrow">{text(hero, "eyebrow")}</p>
+          <h1>{text(hero, "headline")}</h1>
+          <p className="dek">{hero.paragraphs[0]}</p>
+          <p className="hero-context">{text(hero, "context")}</p>
           <div className="hero-actions">
-            <a className="button primary" href="#idea">Why CELLosophy <span>→</span></a>
-            <a className="button secondary" href="#subscribe">Follow or join <span>↘</span></a>
+            <a className="button primary" href={text(hero, "primaryHref")}>{text(hero, "primaryLabel")} <span>{text(hero, "primaryArrow")}</span></a>
+            <a className="button secondary" href={text(hero, "secondaryHref")}>{text(hero, "secondaryLabel")} <span>{text(hero, "secondaryArrow")}</span></a>
           </div>
-          <p className="micro-manifesto">Cells sense <i>·</i> choose <i>·</i> adapt</p>
+          <p className="micro-manifesto">{text(hero, "manifesto")}</p>
         </div>
 
-        <div className="hero-field" aria-label="A field notebook of cellular intelligence">
-          <img src="/cellosophy-organisms.png" alt="Hand-drawn bacteria, Stentor roeseli, and Physarum" />
-          <button className="specimen specimen-bacteria" onClick={() => setActive("bacteria")} aria-pressed={active === "bacteria"}>Bacteria</button>
-          <button className="specimen specimen-stentor" onClick={() => setActive("stentor")} aria-pressed={active === "stentor"}>Stentor roeseli</button>
-          <button className="specimen specimen-physarum" onClick={() => setActive("physarum")} aria-pressed={active === "physarum"}>Physarum</button>
+        <div className="hero-field" aria-label={text(hero, "fieldLabel")}>
+          <img src="/cellosophy-organisms.png" alt={text(hero, "imageAlt")} />
+          {organisms.map((organism) => (
+            <button
+              key={organism.id}
+              className={`specimen specimen-${text(organism, "key")}`}
+              onClick={() => setActiveKey(text(organism, "key"))}
+              aria-pressed={activeKey === text(organism, "key")}
+            >
+              {text(organism, "label")}
+            </button>
+          ))}
           <aside className="fact-card" aria-live="polite">
-            <span>{organisms[active].kicker}</span>
-            <strong>{organisms[active].name}</strong>
-            <p>{organisms[active].fact}</p>
+            <span>{text(activeOrganism, "kicker")}</span>
+            <strong>{text(activeOrganism, "name")}</strong>
+            <p>{activeOrganism.paragraphs[0]}</p>
           </aside>
           <p className="field-prompt">Choose a specimen ↑</p>
         </div>
       </section>
 
       <section className="idea-section" id="idea">
-        <p className="section-number">01 / Why Cellosophy</p>
+        <p className="section-number">{text(idea, "number").padStart(2, "0")} / {text(idea, "label")}</p>
         <div>
-          <h2>Mind may not begin with the brain.</h2>
-          <p>
-            We tend to treat brains as the birthplace of perception, memory,
-            and action. But living cells were sensing their surroundings,
-            evaluating possibilities, and changing course eons before neurons
-            appeared. Cellosophy asks whether these capacities are merely the
-            machinery beneath mind, or its earliest forms.
-          </p>
+          <h2>{text(idea, "heading")}</h2>
+          <p>{idea.paragraphs[0]}</p>
         </div>
-        <blockquote>“Not little humans in little cells—but life solving the problem of what to do next.”</blockquote>
+        <blockquote>{text(idea, "quote")}</blockquote>
       </section>
 
       <section className="notes-section" id="vision">
         <div className="notes-heading">
-          <p className="section-number">02 / Vision</p>
+          <p className="section-number">{text(vision, "number").padStart(2, "0")} / {text(vision, "label")}</p>
           <div>
-            <h2>The Essence of CELLosophy</h2>
+            <h2>{text(vision, "heading")}</h2>
             <div className="essence-statement">
-              <p>CELLosophy is an inquiry into cognition that begins with the living cell. Its central question - do you need a brain to have a mind?-opens a bottom-up investigation of how autonomous organisms sense, evaluate, remember, regulate, and act in changing environments.</p>
-              <p>We treat cognition broadly and carefully. Neither do we claim that bacteria think like humans, nor that every biological process is intelligent. Instead, we ask what kinds of problem-solving, agency, and meaning-making are already present in the basic work of staying alive.</p>
-              <p>Bacterial chemotaxis, especially in E. coli, offers a flagship example: receptors detect change, signaling networks integrate information, methylation provides a memory-like baseline, and flagellar motors turn valuation into movement.</p>
-              <p>We are exploring the connection between these concrete biochemical mechanisms and larger debates on basal cognition, enactivism, cybernetics, biosemiotics, and embodied intelligence. By its very nature, CELLosophy is both a research program and a public commons for curious minds; one that brings rigorous science, imaginative questions, and collaborative discovery together.</p>
+              {vision.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
         </div>
@@ -109,60 +97,43 @@ export default function Home() {
 
       <section className="about-section" id="about">
         <div className="about-heading">
-          <p className="section-number">03 / Who we are</p>
+          <p className="section-number">{text(about, "number").padStart(2, "0")} / {text(about, "label")}</p>
           <div>
-            <h2>Different disciplines. One pursuit.</h2>
-            <p className="about-intro">
-              CELLosophy brings together cognitive scientists, computer
-              scientists, microbiologists, and mathematicians to think across
-              the usual boundaries between life, mind, and intelligence.
-            </p>
+            <h2>{text(about, "heading")}</h2>
+            <p className="about-intro">{about.paragraphs[0]}</p>
           </div>
         </div>
         <div className="about-grid">
-          <article>
-            <span>01</span>
-            <h3>Origins of mind</h3>
-            <p>We want to understand how sensing, memory, choice, and agency could arise before brains and nervous systems.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>The lives of cells</h3>
-            <p>Unicellular creatures are not merely machinery. They are active beings navigating uncertain worlds—and they may hold clues to the beginnings of mind and life.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Better artificial intelligence</h3>
-            <p>By learning how living systems adapt and solve problems without brains, we hope to imagine AI that is more flexible, resourceful, and responsive to its world.</p>
-          </article>
+          {aboutCards.map((card) => (
+            <article key={card.id}>
+              <span>{text(card, "number").padStart(2, "0")}</span>
+              <h3>{text(card, "heading")}</h3>
+              <p>{card.paragraphs[0]}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="subscribe-section" id="subscribe">
         <div>
-          <p className="section-number">04 / Follow or join</p>
-          <h2>Come along for the inquiry.</h2>
-          <p>
-            Subscribe to our Substack for essays, observations, experiments,
-            and conversations as CELLosophy takes shape. If these questions
-            meet your own work, reply to a note and introduce yourself—we
-            would be delighted to hear from potential collaborators.
-          </p>
+          <p className="section-number">{text(subscribe, "number").padStart(2, "0")} / {text(subscribe, "label")}</p>
+          <h2>{text(subscribe, "heading")}</h2>
+          <p>{subscribe.paragraphs[0]}</p>
         </div>
         <div className="substack-signup">
           <iframe
             src="https://cellosophy.substack.com/embed"
             width="480"
             height="320"
-            title="Subscribe to Cellosophy on Substack"
+            title={text(subscribe, "embedTitle")}
             frameBorder="0"
             scrolling="no"
           />
-          <p>Follow the journey. Join the conversation. Perhaps help shape what comes next.</p>
+          <p>{text(subscribe, "embedNote")}</p>
         </div>
       </section>
 
-      <footer><span>CELLosophy</span><p>Cognitive science · Computer science · Microbiology · Mathematics</p><a href="#top">Back to the cell ↑</a></footer>
+      <footer><span>{text(footer, "wordmark")}</span><p>{text(footer, "tagline")}</p><a href="#top">{text(footer, "backLabel")}</a></footer>
     </main>
   );
 }

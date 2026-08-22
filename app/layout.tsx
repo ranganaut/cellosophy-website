@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getContentNote, text } from "./content";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  ...(() => {
+    const siteMetadata = getContentNote("site/metadata");
+    return {
+      title: text(siteMetadata, "title"),
+      description: text(siteMetadata, "description"),
+    };
+  })(),
   metadataBase: new URL("https://cellosophy.epistry.org"),
-  title: "Cellosophy",
-  description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
   alternates: {
     canonical: "/",
   },
@@ -24,21 +30,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Cellosophy",
-    title: "Cellosophy — Minds Without Brains",
-    description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
+    title: (() => text(getContentNote("site/metadata"), "socialTitle"))(),
+    description: (() => text(getContentNote("site/metadata"), "socialDescription"))(),
     images: [
       {
         url: "/cellosophy-social-card.png",
         width: 1200,
         height: 630,
-        alt: "Cellosophy — Do minds really need brains?",
+        alt: (() => text(getContentNote("site/metadata"), "socialAlt"))(),
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cellosophy — Minds Without Brains",
-    description: "A cross-disciplinary inquiry into minds without brains—and what cellular intelligence can teach us about better AI.",
+    title: (() => text(getContentNote("site/metadata"), "socialTitle"))(),
+    description: (() => text(getContentNote("site/metadata"), "socialDescription"))(),
     images: ["/cellosophy-social-card.png"],
   },
   other: {

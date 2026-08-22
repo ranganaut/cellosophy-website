@@ -47,4 +47,10 @@ The subscription form points to `https://cellosophy.substack.com/embed`. It will
 
 ## Updating the site
 
-Edit the source, commit the changes to GitHub, and Cloudflare will rebuild and publish the new version automatically.
+For editorial changes, open the repository's `content/` directory as an Obsidian
+vault. Edit the Markdown notes, commit the changes to GitHub, and Cloudflare
+will regenerate the content manifest and publish the new version automatically.
+
+For layout, styling, or behavior changes, edit the application source outside
+the vault. The vault controls the words; the application controls presentation
+and interaction.

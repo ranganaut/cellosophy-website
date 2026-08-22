@@ -22,6 +22,8 @@ Scripts that need writable project-scoped home, npm, XDG, and temporary paths us
 ## Included Shape
 
 - edit site code under `app/`
+- edit the Obsidian-compatible editorial vault under `content/`
+- run `npm run content:generate` to refresh the generated content manifest
 - `app/chatgpt-auth.ts` provides optional dispatch-owned ChatGPT sign-in helpers
 - `.openai/hosting.json` declares optional Sites D1 and R2 bindings
 - `vite.config.ts` simulates declared bindings for local development
@@ -99,6 +101,16 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
 Use build and validation commands for targeted diagnosis after a remote failure, not as part of the normal checkpoint path.
+
+## Editorial vault
+
+Open the `content/` directory as an Obsidian vault. The Markdown notes there are
+the source of truth for the landing-page copy: navigation, hero text, section
+headings, organism facts, subscription copy, footer text, and site metadata.
+
+The build regenerates `app/content.generated.ts` from the vault before compiling
+the site. Layout, CSS, and interaction remain in the application code. Notes are
+published unless their frontmatter contains `publish: false`.
 
 The timeout defaults can be overridden for a controlled canary with `SITES_INSTALL_TIMEOUT`, `SITES_INSTALL_KILL_AFTER`, `SITES_BUILD_TIMEOUT`, and `SITES_BUILD_KILL_AFTER`. A timeout fails the command; the helpers never retry an unchanged install or build.
 
