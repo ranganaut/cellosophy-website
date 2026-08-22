@@ -1,6 +1,6 @@
-import { list, text } from "../content";
+import { text } from "../content";
 import { NoteCard } from "./NoteCard";
-import { getWikiIndex, publishedWikiNotes, renderObsidianMarkdown } from "../wiki";
+import { getWikiIndex, noteTags, publishedWikiNotes, renderObsidianMarkdown } from "../wiki";
 
 export const metadata = {
   title: "Notes — CELLosophy",
@@ -10,7 +10,7 @@ export const metadata = {
 export default function NotesIndex({ searchParams }: { searchParams?: { tag?: string } }) {
   const index = getWikiIndex();
   const selectedTag = searchParams?.tag;
-  const notes = publishedWikiNotes().filter((note) => note.id !== index.id && (!selectedTag || list(note, "tags").includes(selectedTag)));
+  const notes = publishedWikiNotes().filter((note) => note.id !== index.id && (!selectedTag || noteTags(note).includes(selectedTag)));
 
   return (
     <main className="wiki-shell">
@@ -22,7 +22,7 @@ export default function NotesIndex({ searchParams }: { searchParams?: { tag?: st
         <article className="wiki-index-note">
           <div className="note-meta"><span>index</span><span>{index.path}</span></div>
           <h1>{text(index, "title")}</h1>
-          <div className="tag-list note-tags">{list(index, "tags").map((tag) => <a key={tag} href={`/notes?tag=${encodeURIComponent(tag)}`}>#{tag}</a>)}</div>
+          <div className="tag-list note-tags">{noteTags(index).map((tag) => <a key={tag} href={`/notes?tag=${encodeURIComponent(tag)}`}>#{tag}</a>)}</div>
           <div className="note-body" dangerouslySetInnerHTML={{ __html: renderObsidianMarkdown(index.body) }} />
         </article>
         <aside className="wiki-sidebar">

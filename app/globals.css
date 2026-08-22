@@ -115,6 +115,7 @@ footer a { color:#ffb08a; }
 .note-body h1 { font-size:3rem; } .note-body h2 { font-size:2.2rem; } .note-body h3 { font-size:1.5rem; }
 .note-body p { margin:0 0 1.35rem; }
 .note-body a { color:var(--cobalt); text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:3px; }
+.note-body .inline-tag { font:700 .85em ui-monospace, SFMono-Regular, Menlo, monospace; }
 .note-body .wikilink.unresolved { color:var(--rust); text-decoration-style:dashed; }
 .note-body ul, .note-body ol { padding-left:1.5rem; }
 .note-body blockquote { transform:none; margin:2rem 0; }

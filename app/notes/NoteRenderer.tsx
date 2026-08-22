@@ -1,5 +1,5 @@
-import { list, text, type ContentNote } from "../content";
-import { backlinksFor, noteHref, noteTitle, renderObsidianCanvas, renderObsidianMarkdown } from "../wiki";
+import { text, type ContentNote } from "../content";
+import { backlinksFor, noteHref, noteTags, noteTitle, renderObsidianCanvas, renderObsidianMarkdown } from "../wiki";
 
 export function NoteRenderer({ note }: { note: ContentNote }) {
   const backlinks = backlinksFor(note);
@@ -10,7 +10,7 @@ export function NoteRenderer({ note }: { note: ContentNote }) {
         <span>{note.path}</span>
       </div>
       <div className="tag-list note-tags">
-        {list(note, "tags").map((tag) => <a key={tag} href={`/notes?tag=${encodeURIComponent(tag)}`}>#{tag}</a>)}
+        {noteTags(note).map((tag) => <a key={tag} href={`/notes?tag=${encodeURIComponent(tag)}`}>#{tag}</a>)}
       </div>
       {note.canvas ? (
         <div className="note-body canvas-body" dangerouslySetInnerHTML={{ __html: renderObsidianCanvas(note.canvas) }} />

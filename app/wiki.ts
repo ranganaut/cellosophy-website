@@ -24,6 +24,11 @@ export function noteTitle(note: ContentNote): string {
   return text(note, "title") || note.path.split("/").at(-1)?.replace(/\.(md|canvas)$/, "") || note.id;
 }
 
+export function noteTags(note: ContentNote): string[] {
+  const inlineTags = [...note.body.matchAll(/(?:^|\s)#([A-Za-z][\w/-]*)/g)].map((match) => match[1]);
+  return [...new Set([...list(note, "tags"), ...inlineTags])];
+}
+
 function normalizeTarget(target: string): string {
   return decodeURIComponent(target.trim()).replace(/\.md$/, "").replace(/^notes\//, "");
 }
@@ -76,6 +81,8 @@ function rewriteWikiLinks(source: string, notes: ContentNote[]): string {
     const label = rawLabel?.trim() || (linked ? noteTitle(linked) : target.trim());
     return `<a class="wikilink${linked ? "" : " unresolved"}" href="${href}${fragment}">${escapeHtml(label)}</a>`;
   });
+
+  rewritten = rewritten.replace(/(^|[\s(])#([A-Za-z][\w/-]*)/g, (_, prefix: string, tag: string) => `${prefix}<a class="inline-tag" href="/notes?tag=${encodeURIComponent(tag)}">#${escapeHtml(tag)}</a>`);
 
   return rewritten.replace(/@@OBSIDIAN_CODE_(\d+)@@/g, (_, index: string) => codeBlocks[Number(index)]);
 }
