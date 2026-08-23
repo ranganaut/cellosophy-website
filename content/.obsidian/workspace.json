@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/index.md",
+                "file": "notes/chemotaxis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "chemotaxis"
             }
           }
         ]
@@ -190,9 +190,9 @@
   },
   "active": "e22e777c1d335fc9",
   "lastOpenFiles": [
+    "notes/index.md",
     "README.md",
     "site/navigation/notes.md",
-    "notes/index.md",
     "notes/chemotaxis.md",
     "notes/biological-agency.md",
     "notes",
