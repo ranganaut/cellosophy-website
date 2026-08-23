@@ -13,6 +13,7 @@ aliases: [Bacterial chemotaxis]
 
 Chemotaxis is the movement of an organism in response to chemical signals. In *E. coli*, receptors detect changes in the environment, signaling networks integrate those changes, and the flagellar motor turns the result into movement.
 
+---
 
 Can a cell think? Until recently, that question would have been brushed away or rejected out of hand. Cognition was viewed as the province of brains, neurons, and complex synaptic networks. Not anymore; researchers across microbiology, biophysics, and philosophy are increasingly converging on the framework of ['basal cognition'](https://en.wikipedia.org/wiki/Basal_cognition) - the notion that sensing, information processing, memory, and decision-making [are fundamental properties of life itself](https://pmc.ncbi.nlm.nih.gov/articles/PMC4396460/), extending all the way down to the humble microbe. 
 
