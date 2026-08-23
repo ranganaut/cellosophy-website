@@ -28,6 +28,7 @@ h1 { font-size:clamp(3.25rem,6vw,6.8rem); line-height:.91; letter-spacing:-.07em
 .dek { font-size:clamp(1.1rem,1.65vw,1.55rem); line-height:1.4; max-width:650px; margin-bottom:2rem; }
 .hero-context { max-width:650px; margin:-.5rem 0 2rem; color:var(--moss); font-size:.9rem; font-weight:700; line-height:1.55; }
 .hero-actions { display:flex; gap:1rem; width:100%; }
+.hero-actions .button { flex:1; min-width:0; padding-left:1rem; padding-right:1rem; gap:.75rem; }
 .button { min-height:64px; padding:0 1.7rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; border:2px solid; font-weight:800; }
 .button span { font-size:1.6rem; transition:transform .2s ease; }
 .button:hover span { transform:translateX(5px); }

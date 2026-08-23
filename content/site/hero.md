@@ -7,7 +7,10 @@ headline: Do minds really need brains?
 primaryLabel: Why CELLosophy
 primaryHref: "#idea"
 primaryArrow: "→"
-secondaryLabel: Follow or join
+notesLabel: Read the Notes
+notesHref: "/notes"
+notesArrow: "↗"
+secondaryLabel: Subscribe to our Substack
 secondaryHref: "#subscribe"
 secondaryArrow: "↘"
 manifesto: Cells sense · choose · adapt
