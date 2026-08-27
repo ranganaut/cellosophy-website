@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/index.md",
+                "file": "notes/biological-agency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "biological-agency"
             }
           }
         ]
@@ -190,8 +190,8 @@
   },
   "active": "e22e777c1d335fc9",
   "lastOpenFiles": [
-    "Biological agency.md",
     "notes/index.md",
+    "Biological agency.md",
     "notes/chemotaxis.md",
     "notes/biological-agency.md",
     "README.md",
