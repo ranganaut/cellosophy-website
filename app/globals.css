@@ -119,7 +119,8 @@ footer a { color:#ffb08a; }
 .note-body .inline-tag { font:700 .85em ui-monospace, SFMono-Regular, Menlo, monospace; }
 .note-body .wikilink.unresolved { color:var(--rust); text-decoration-style:dashed; }
 .note-body ul, .note-body ol { padding-left:1.5rem; }
-.note-body blockquote { transform:none; margin:2rem 0; }
+.note-body blockquote { transform:none; margin:2rem 0; padding:1.25rem 1.5rem; background:var(--celadon); border-left:5px solid var(--cobalt); color:var(--ink); font:inherit; line-height:1.6; }
+.note-body blockquote p:last-child { margin-bottom:0; }
 .note-body pre { padding:1.25rem; background:var(--ink); color:var(--cream); overflow:auto; font-size:.9rem; }
 .note-body code { background:rgba(23,32,29,.09); padding:.1rem .25rem; }
 .footnotes { margin-top:4rem; padding-top:1.5rem; border-top:1px solid rgba(23,32,29,.2); font-size:.95rem; line-height:1.55; }
