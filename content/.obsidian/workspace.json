@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/chemotaxis.md",
+                "file": "notes/biological-agency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "chemotaxis"
+              "title": "biological-agency"
             }
           }
         ]
@@ -190,10 +190,10 @@
   },
   "active": "e22e777c1d335fc9",
   "lastOpenFiles": [
+    "notes/chemotaxis.md",
     "notes/index.md",
     "README.md",
     "site/navigation/notes.md",
-    "notes/chemotaxis.md",
     "notes/biological-agency.md",
     "notes",
     "organisms/bacteria.md"
