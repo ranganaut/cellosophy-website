@@ -219,13 +219,11 @@ export const contentNotes: ContentNote[] = [
         "cellosophy"
       ]
     },
-    "body": "# The Cellosophy Notes\n\nThis is the public notebook of CELLosophy: an evolving record of questions, conversations, readings, experiments, and concepts gathered around cognition in living systems.\n\nThe notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[Biological agency]], or a **textbook in progress**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention.\n\n## Ways into the notes\n\n- **Journal Club** - commentary on papers and books.\n- **Conversations** - cleaned-up transcripts of recorded calls.\n- **Concepts** - interconnected notes on important topics.\n- **Textbook** - a slowly assembling introduction to Cellosophy.",
+    "body": "# The Cellosophy Notes\n\nThis is the public notebook of CELLosophy: an evolving record of questions, conversations, readings, experiments, and concepts gathered around cognition in living systems.\n\nThe notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[biological-agency]], and eventually, a **textbook**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention.",
     "paragraphs": [
       "# The Cellosophy Notes",
       "This is the public notebook of CELLosophy: an evolving record of questions, conversations, readings, experiments, and concepts gathered around cognition in living systems.",
-      "The notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[Biological agency]], or a **textbook in progress**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention.",
-      "## Ways into the notes",
-      "- **Journal Club** - commentary on papers and books.\n- **Conversations** - cleaned-up transcripts of recorded calls.\n- **Concepts** - interconnected notes on important topics.\n- **Textbook** - a slowly assembling introduction to Cellosophy."
+      "The notes may become a **Journal Club**, a library of cleaned-up **conversation transcripts**, an interconnected map of concepts such as [[Chemotaxis]] and [[biological-agency]], and eventually, a **textbook**. The structure is intentionally open. Follow a link, browse a tag, or start anywhere that catches your attention."
     ]
   },
   {
