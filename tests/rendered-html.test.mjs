@@ -31,3 +31,22 @@ test("renders development preview metadata", async () => {
   );
   assert.match(await response.text(), developmentPreviewMeta);
 });
+
+test("renders Obsidian footnotes on note pages", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-footnotes`);
+  const { default: worker } = await import(workerUrl.href);
+  const response = await worker.fetch(
+    new Request("http://localhost/notes/biological-agency", {
+      headers: { accept: "text/html" },
+    }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  const html = await response.text();
+  assert.equal(response.status, 200);
+  assert.match(html, /class="footnote-ref"/);
+  assert.match(html, /class="footnotes"/);
+  assert.match(html, /Sultan/);
+  assert.match(html, /Schrödinger/);
+});

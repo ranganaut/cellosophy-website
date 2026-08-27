@@ -99,9 +99,66 @@ function renderCallouts(source: string, notes: ContentNote[]): string {
   });
 }
 
+type Footnote = { label: string; body: string };
+
+function extractFootnotes(source: string): { body: string; footnotes: Footnote[] } {
+  const lines = source.split("\n");
+  const body: string[] = [];
+  const footnotes: Footnote[] = [];
+  let current: Footnote | undefined;
+
+  const finish = () => {
+    if (current) footnotes.push({ label: current.label, body: current.body.trim() });
+    current = undefined;
+  };
+
+  for (const line of lines) {
+    const definition = line.match(/^\[\^([^\]]+)\]:\s*(.*)$/);
+    if (definition) {
+      finish();
+      current = { label: definition[1], body: definition[2] };
+    } else if (current && (/^(?: {2,}|\t)/.test(line) || line.trim() === "")) {
+      current.body += `\n${line.trim()}`;
+    } else {
+      finish();
+      body.push(line);
+    }
+  }
+  finish();
+  return { body: body.join("\n"), footnotes };
+}
+
+function renderFootnotes(source: string, notes: ContentNote[]): { body: string; footer: string } {
+  const extracted = extractFootnotes(source);
+  if (extracted.footnotes.length === 0) return { body: source, footer: "" };
+
+  const used = new Map<string, number>();
+  const body = extracted.body.replace(/\[\^([^\]]+)\]/g, (_, label: string) => {
+    const number = extracted.footnotes.findIndex((footnote) => footnote.label === label) + 1;
+    if (number === 0) return _;
+    const occurrence = (used.get(label) ?? 0) + 1;
+    used.set(label, occurrence);
+    const suffix = occurrence === 1 ? "" : `-${occurrence}`;
+    return `<sup class="footnote-ref"><a href="#fn-${escapeHtml(label)}" id="fnref-${escapeHtml(label)}${suffix}">${number}</a></sup>`;
+  });
+
+  const footer = `<section class="footnotes" aria-label="Footnotes"><h2>Footnotes</h2><ol>${extracted.footnotes.map((footnote, index) => {
+    const label = escapeHtml(footnote.label);
+    const rendered = String(marked.parse(rewriteWikiLinks(footnote.body, notes)));
+    const references = used.get(footnote.label) ?? 1;
+    const backLinks = Array.from({ length: references }, (_, occurrence) => {
+      const suffix = occurrence === 0 ? "" : `-${occurrence + 1}`;
+      return `<a class="footnote-backref" href="#fnref-${label}${suffix}" aria-label="Back to reference ${index + 1}">↩</a>`;
+    }).join(" ");
+    return `<li id="fn-${label}">${rendered} ${backLinks}</li>`;
+  }).join("")}</ol></section>`;
+  return { body, footer };
+}
+
 export function renderObsidianMarkdown(source: string, notes = publishedWikiNotes()): string {
   const withCallouts = renderCallouts(source, notes);
-  return String(marked.parse(rewriteWikiLinks(withCallouts, notes)));
+  const withFootnotes = renderFootnotes(withCallouts, notes);
+  return `${String(marked.parse(rewriteWikiLinks(withFootnotes.body, notes)))}${withFootnotes.footer}`;
 }
 
 function canvasColor(value: string | undefined): string {
